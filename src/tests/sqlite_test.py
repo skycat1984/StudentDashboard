@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS student (
 cursor.execute("""
 INSERT INTO student (matrikelnummer, name)
 VALUES (?, ?)
-""", ("123456", "Sabine Jungmayr"))
+""", ("123456", "Sabine Mustermann"))
 
 # Änderungen speichern
 connection.commit()
