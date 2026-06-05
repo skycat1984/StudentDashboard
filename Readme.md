@@ -1,6 +1,6 @@
-# Studien-Dashboard – Phase 1
+# Studien-Dashboard
 
-Dieses Repository enthält zwei kleine Testprogramme zur Machbarkeitsüberprüfung für den späteren Studien-Dashboard-Prototypen.
+Dieses Repository enthält die Ergebnisse der ersten beiden Phasen des Portfolios „Objektorientierte und funktionale Programmierung mit Python“.
 
 ## Voraussetzungen
 
@@ -32,9 +32,21 @@ Python-Version prüfen:
 python --version
 ```
 
-## Testprogramm 1: Tkinter
+## Phase 1 – Machbarkeitsüberprüfung
 
-Das Tkinter-Testprogramm prüft, ob eine einfache grafische Benutzeroberfläche erstellt werden kann.
+Die Programme der ersten Phase dienen der Untersuchung technischer Grundlagen für den späteren Dashboard-Prototypen.
+
+### Testprogramm 1: Tkinter
+
+Datei:
+
+```text
+tkinter_test.py
+```
+
+Ziel:
+
+* Untersuchung der Umsetzbarkeit einer grafischen Benutzeroberfläche mit Tkinter.
 
 Ausführen:
 
@@ -44,13 +56,21 @@ python tkinter_test.py
 
 Erwartetes Ergebnis:
 
-* Es öffnet sich ein Fenster mit dem Titel „Tkinter Test“.
-* Ein Button „Tkinter testen“ wird angezeigt.
-* Beim Klicken auf den Button erscheint eine Meldung.
+* Ein Fenster mit dem Titel „Tkinter Test“ wird geöffnet.
+* Ein Button wird angezeigt.
+* Nach dem Anklicken erscheint eine Meldung.
 
-## Testprogramm 2: SQLite
+### Testprogramm 2: SQLite
 
-Das SQLite-Testprogramm prüft, ob Daten lokal gespeichert und wieder ausgelesen werden können.
+Datei:
+
+```text
+sqlite_test.py
+```
+
+Ziel:
+
+* Untersuchung der lokalen Datenspeicherung mit SQLite.
 
 Ausführen:
 
@@ -60,16 +80,99 @@ python sqlite_test.py
 
 Erwartetes Ergebnis:
 
-* Es wird eine SQLite-Datenbankdatei `dashboard.db` erstellt.
-* Eine Tabelle `student` wird angelegt.
+* Eine SQLite-Datenbankdatei wird erzeugt.
+* Eine Tabelle wird angelegt.
 * Ein Testdatensatz wird gespeichert.
-* Der gespeicherte Datensatz wird in der Konsole ausgegeben.
+* Die gespeicherten Daten werden ausgelesen und ausgegeben.
 
-## Zweck der Testprogramme
+## Phase 2 – Untersuchung objektorientierter Konzepte
 
-Die Testprogramme zeigen, dass die geplanten technischen Grundlagen für den späteren Dashboard-Prototypen funktionieren:
+Die Programme der zweiten Phase untersuchen die Umsetzung objektorientierter Konzepte in Python und dienen als Grundlage für die spätere Gesamtarchitektur des Dashboard-Prototyps.
 
-* grafische Oberfläche mit Tkinter
+### Testprogramm 1: Dataclasses
+
+Datei:
+
+```text
+test_dataclasses.py
+```
+
+Ziel:
+
+* Untersuchung der Umsetzung von Domain-Klassen mit Python-Dataclasses.
+
+Untersuchte Konzepte:
+
+* Klassen und Objekte
+* Dataclasses
+* automatische Erzeugung von Standardmethoden
+
+### Testprogramm 2: Enumerationen
+
+Datei:
+
+```text
+test_enums.py
+```
+
+Ziel:
+
+* Untersuchung der Umsetzung von Enumerationen mit Python.
+
+Untersuchte Konzepte:
+
+* Enum-Klassen
+* feste Wertebereiche
+* Vermeidung ungültiger Zustände
+
+### Testprogramm 3: Beziehungen
+
+Datei:
+
+```text
+test_beziehungen.py
+```
+
+Ziel:
+
+* Untersuchung der Umsetzung von Beziehungen zwischen Klassen.
+
+Untersuchte Konzepte:
+
+* Aggregation
+* Komposition
+* Objektreferenzen
+* Listen als Umsetzung von 1:n-Beziehungen
+
+### Testprogramm 4: Service-Klassen
+
+Datei:
+
+```text
+test_services.py
+```
+
+Ziel:
+
+* Untersuchung der Trennung von Datenhaltung und Berechnungslogik.
+
+Untersuchte Konzepte:
+
+* Service-Klassen
+* Berechnung von Kennzahlen
+* Trennung von Domain- und Logikschicht
+
+## Zweck des Repositorys
+
+Die enthaltenen Testprogramme zeigen die technische und objektorientierte Umsetzbarkeit des geplanten Studien-Dashboard-Prototyps.
+
+Untersucht wurden:
+
+* grafische Benutzeroberflächen mit Tkinter
 * lokale Datenspeicherung mit SQLite
-* Ausführung über Python 3.13
-* Verwaltung des Codes über Git/GitHub
+* Domain-Klassen mit Dataclasses
+* Enumerationen mit Python-Enums
+* Beziehungen zwischen Klassen
+* Service-Klassen zur Kapselung von Berechnungen
+* Ausführung mit Python 3.13
+* Versionsverwaltung mit Git und GitHub
