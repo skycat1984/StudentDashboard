@@ -1,0 +1,40 @@
+```gitignore
+# Python-Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuelle Python-Umgebungen
+.venv/
+venv/
+env/
+
+# Test- und Coverage-Dateien
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Typprüfung und Linter
+.mypy_cache/
+.ruff_cache/
+
+# IDE-Dateien
+.vscode/
+.idea/
+
+# Betriebssystemdateien
+.DS_Store
+Thumbs.db
+
+# Temporäre Dateien
+*.log
+*.tmp
+*.bak
+*~
+
+# SQLite-Dateien
+dashboard.db
+dashboard.db-shm
+dashboard.db-wal
+```
