@@ -1,52 +1,101 @@
-Installationsanleitung – Studien-Dashboard
+# Studien-Dashboard
 
-1. Voraussetzungen
+Ein prototypisches Studien-Dashboard zur übersichtlichen Darstellung des persönlichen Studienfortschritts.
 
-Für die Ausführung des Studien-Dashboards werden benötigt:
+Das Projekt wurde im Rahmen des Kurses „Objektorientierte und funktionale Programmierung mit Python“ entwickelt. Der Schwerpunkt liegt auf der objektorientierten Modellierung und einer klaren Trennung der Verantwortlichkeiten innerhalb der Anwendung.
 
-* aktuelles Windows-Betriebssystem
-* Python [GETESTETE VERSION] oder höher
-* Internetzugang zum Herunterladen des Quellcodes
+## Funktionen
 
-Der Prototyp verwendet ausschließlich Bestandteile der Python-Standardbibliothek, insbesondere Tkinter für die grafische Benutzeroberfläche und SQLite für die Datenspeicherung. Zusätzliche Python-Pakete müssen daher nicht installiert werden.
+Das Dashboard zeigt unter anderem:
 
-Bei der Installation von Python sollte die Option „Add Python to PATH“ aktiviert werden.
+* erreichte und gesamte ECTS
+* ECTS-Fortschritt in Prozent
+* bisherigen Zeitfortschritt
+* aktuellen Notendurchschnitt
+* Anzahl bestandener Module
+* Anzahl offener Module
+* aktuell gebuchte Kurse
+* prognostiziertes Abschlussdatum
+* aktuellen Studienstatus
 
-2. Quellcode herunterladen
+## Technische Grundlagen
 
-Der vollständige Quellcode befindet sich im folgenden GitHub-Repository:
+* Python 3.12.x
+* getestet mit Python 3.12.10
+* Tkinter für die grafische Benutzeroberfläche
+* SQLite für die lokale Datenspeicherung
+* ausschließlich Python-Standardbibliothek
+* keine zusätzlichen Python-Pakete erforderlich
 
-[GITHUB-LINK]
+## Architektur
 
-Das Repository kann über „Code“ und „Download ZIP“ heruntergeladen werden. Anschließend ist die ZIP-Datei vollständig zu entpacken.
+Die Anwendung verwendet ein Schichtenmodell mit klar getrennten Verantwortlichkeiten:
 
-Alternativ kann das Repository mit Git geklont werden:
+* `domain`: fachliche Klassen und Enumerationen
+* `repositories`: Datenbankzugriff und Erzeugung der Domain-Objekte
+* `services`: fachliche Berechnungen
+* `controller`: Koordination von Repositories und Services
+* `dto`: Übergabe der aufbereiteten Dashboard-Daten
+* `views`: grafische Darstellung mit Tkinter
+* `application`: Erzeugung und Verdrahtung der Anwendungskomponenten
 
-```powershell
-git clone [GITHUB-LINK]
+Die Klasse `DashboardApp` bildet den Composition Root der Anwendung.
+
+## Projektstruktur
+
+```text
+StudentDashboard/
+├── init_database.py
+├── README.md
+├── .gitignore
+└── src/
+    ├── main.py
+    ├── application/
+    ├── controller/
+    ├── domain/
+    ├── dto/
+    ├── repositories/
+    ├── services/
+    └── views/
 ```
 
-3. Datenbank initialisieren
+Die Datei `dashboard.db` wird durch das Initialisierungsskript erzeugt und ist nicht Bestandteil des Repositorys.
 
-Zunächst ist PowerShell oder die Windows-Eingabeaufforderung im Hauptverzeichnis des entpackten Projekts zu öffnen.
+## Installation
 
-Die SQLite-Datenbank mit den benötigten Tabellen und Beispieldaten wird mit folgendem Befehl erstellt:
+### 1. Repository herunterladen
+
+Das Projekt kann über GitHub als ZIP-Datei heruntergeladen oder mit Git geklont werden:
+
+```powershell
+git clone https://github.com/skycat1984/StudentDashboard.git
+```
+
+Anschließend in das Projektverzeichnis wechseln:
+
+```powershell
+cd StudentDashboard
+```
+
+### 2. Datenbank initialisieren
+
+Im Hauptverzeichnis des Projekts folgenden Befehl ausführen:
 
 ```powershell
 python init_database.py
 ```
 
-Falls der Befehl `python` nicht erkannt wird, kann unter Windows alternativ verwendet werden:
+Falls `python` unter Windows nicht erkannt wird:
 
 ```powershell
-py init_database.py
+py -3.12 init_database.py
 ```
 
-Nach erfolgreicher Ausführung befindet sich die Datei `dashboard.db` im Hauptverzeichnis des Projekts.
+Das Skript erstellt die SQLite-Datenbank `dashboard.db` mit den benötigten Tabellen und Beispieldaten.
 
-4. Dashboard starten
+### 3. Anwendung starten
 
-Das Studien-Dashboard wird anschließend aus dem Hauptverzeichnis mit folgendem Befehl gestartet:
+Das Dashboard wird aus dem Hauptverzeichnis gestartet:
 
 ```powershell
 python -m src.main
@@ -55,11 +104,23 @@ python -m src.main
 Alternativ:
 
 ```powershell
-py -m src.main
+py -3.12 -m src.main
 ```
 
-Nach dem Start öffnet sich die grafische Benutzeroberfläche des Studien-Dashboards.
+Nach dem Start öffnet sich die grafische Benutzeroberfläche.
 
-5. Beenden
+## Bedienung
 
-Das Programm wird durch Schließen des Dashboard-Fensters beendet.
+Der Prototyp ist als reine Anzeigeanwendung umgesetzt. Die dargestellten Daten werden aus der lokal erzeugten SQLite-Datenbank geladen. Das Programm wird durch Schließen des Dashboard-Fensters beendet.
+
+## Hinweise
+
+* Die Anwendung wurde für ein aktuelles Windows-Betriebssystem entwickelt und getestet.
+* Vor dem ersten Start muss `init_database.py` ausgeführt werden.
+* Die Datenbankdatei `dashboard.db` wird lokal erzeugt.
+* Die Anwendung verwendet keine externen Webdienste und benötigt nach dem Herunterladen keine Internetverbindung.
+
+## Projektstatus
+
+Der aktuelle Stand ist ein funktionsfähiger Prototyp zur Demonstration der objektorientierten Modellierung, des Schichtenmodells und der technischen Umsetzbarkeit des Studien-Dashboards.
+::: 
