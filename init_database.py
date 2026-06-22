@@ -14,8 +14,8 @@ Hinweis:
 from pathlib import Path
 import sqlite3
 
-
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+# init_database.py liegt direkt im Hauptverzeichnis.
+PROJECT_ROOT = Path(__file__).resolve().parent
 DATABASE_PATH = PROJECT_ROOT / "dashboard.db"
 
 STUDIENGANG_ID = 1
