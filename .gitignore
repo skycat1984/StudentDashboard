@@ -1,4 +1,4 @@
-```gitignore
+gitignore
 # Python-Cache
 __pycache__/
 *.py[cod]
@@ -37,4 +37,4 @@ Thumbs.db
 dashboard.db
 dashboard.db-shm
 dashboard.db-wal
-```
+

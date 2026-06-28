@@ -1,7 +1,7 @@
 import sqlite3
 
 # Verbindung zur Datenbank
-connection = sqlite3.connect("dashboard.db")
+connection = sqlite3.connect(":memory:")
 
 # Cursor erstellen
 cursor = connection.cursor()
