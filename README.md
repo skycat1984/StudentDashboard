@@ -2,7 +2,7 @@
 
 Ein prototypisches Studien-Dashboard zur übersichtlichen Darstellung des persönlichen Studienfortschritts.
 
-Das Projekt wurde im Rahmen des Kurses **„Objektorientierte und funktionale Programmierung mit Python“** entwickelt. Der Schwerpunkt liegt auf der objektorientierten Modellierung, der Trennung der Verantwortlichkeiten und der Umsetzung einer übersichtlichen Schichtenarchitektur.
+Das Projekt wurde im Rahmen des Kurses **„Objektorientierte und funktionale Programmierung mit Python“** entwickelt. Der Schwerpunkt liegt auf der objektorientierten Modellierung und einer klaren Trennung der Verantwortlichkeiten innerhalb der Anwendung.
 
 ## Funktionen
 
@@ -93,23 +93,21 @@ cd StudentDashboard
 
 Beim Herunterladen als ZIP-Datei muss die Datei zunächst entpackt werden.
 
-PowerShell oder die Windows-Eingabeaufforderung ist anschließend im Hauptverzeichnis des Projekts zu öffnen. Dabei handelt es sich um den Ordner, in dem sich die Datei `init_database.py` befindet.
+Anschließend ist PowerShell oder die Windows-Eingabeaufforderung im Hauptverzeichnis des entpackten beziehungsweise geklonten Projekts zu öffnen. Dabei handelt es sich um den Ordner, in dem sich die Datei `init_database.py` befindet.
 
 ### 2. Datenbank initialisieren
 
 Die SQLite-Datenbank mit den benötigten Tabellen und Beispieldaten wird mit folgendem Befehl erstellt:
 
 ```powershell
-py -3.13 init_database.py
-```
-
-Falls der Windows-Python-Launcher `py` nicht verfügbar ist, kann alternativ folgender Befehl verwendet werden:
-
-```powershell
 python init_database.py
 ```
 
-Bei Verwendung des Befehls `python` muss sichergestellt sein, dass damit Python 3.13 ausgeführt wird.
+Falls der Befehl `python` unter Windows nicht erkannt wird, kann alternativ folgender Befehl verwendet werden:
+
+```powershell
+py init_database.py
+```
 
 Nach erfolgreicher Ausführung befindet sich die Datei `dashboard.db` im Hauptverzeichnis des Projekts.
 
@@ -118,13 +116,13 @@ Nach erfolgreicher Ausführung befindet sich die Datei `dashboard.db` im Hauptve
 Das Dashboard wird aus dem Hauptverzeichnis des Projekts mit folgendem Befehl gestartet:
 
 ```powershell
-py -3.13 -m src.main
+python -m src.main
 ```
 
-Falls der Windows-Python-Launcher `py` nicht verfügbar ist, kann alternativ folgender Befehl verwendet werden:
+Falls der Befehl `python` unter Windows nicht erkannt wird, kann alternativ folgender Befehl verwendet werden:
 
 ```powershell
-python -m src.main
+py -m src.main
 ```
 
 Nach dem Start öffnet sich die grafische Benutzeroberfläche des Studien-Dashboards.
@@ -154,7 +152,7 @@ test/README_TESTPGMS.md
 * Die Datenbankdatei wird ausschließlich lokal gespeichert.
 * Die Anwendung verwendet keine externen Webdienste.
 * Es müssen keine zusätzlichen Python-Pakete installiert werden.
-* Die Anwendung muss aus dem Hauptverzeichnis mit `-m src.main` gestartet werden.
+* Die Anwendung muss aus dem Hauptverzeichnis mit `python -m src.main` beziehungsweise `py -m src.main` gestartet werden.
 
 ## Projektstatus
 
